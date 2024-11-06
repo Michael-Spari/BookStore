@@ -1,0 +1,17 @@
+.contentBookFrame{
+    background-color: rgb(2, 34, 41);
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 40px;
+}
+img{
+    width: 200px;
+    height: auto;
+}
