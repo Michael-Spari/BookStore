@@ -1,3 +1,36 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #06181a;
+}
+hr {
+    border: 0;
+    height: 2px;
+    width: 100%;
+    background: #333;
+    margin: 20px 0;
+}
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #071f27;
+    height: 100px;
+    color: white;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+.headContent {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1440px;
+    padding-left: 30px;
+}
 #bookFrame {
     display: flex;
     flex-direction: column;
@@ -5,4 +38,8 @@
     align-items: center;
     width: 100%;
     border: 0;
+}
+.commentFrame {
+    height: 120px;
+    overflow-y: auto;
 }

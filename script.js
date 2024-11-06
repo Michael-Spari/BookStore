@@ -11,15 +11,24 @@ function renderBooks() {
     }
 }
 
+function commentsTemplate(comment) {
+    return `<div>
+    <p><b>${comment.name}</b>: ${comment.comment}</p></div>`;
+}
+
 function bookTemplate(book) {
     return `<div class="contentBookFrame">
     <h3>${book.name}</h3>
+    <hr>
     <img src="${bookImg[0].cover}">
+    <hr>
     <p>${book.price} ${book.liked}</p>
-    <p>${book.author}</p>
-    <p>${book.published}</p>
-    <p>${book.genre}</p>
-    <p>${book.comments}</p></div>`;
+    <p><b>Autor: </b>${book.author}</p>
+    <p><b>Erscheinungsjahr: </b>${book.publishedYear}</p>
+    <p><b>Genre: </b>${book.genre}</p>
+    <hr>
+    <p><b>Kommentare:</b></p><br><div class="commentFrame"> ${book.comments.map(comment => commentsTemplate(comment)).join('')}</div></div>`;
+    
     // return a string of HTML containing the book data
     // titel
     // bild vom buch
