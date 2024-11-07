@@ -2,14 +2,7 @@ let bookImg = [{
     "cover": './assets/img/thumb.png'
 }];
 
-// let allNotes = {
-//     commentname: ['Ba', 'Aufgabe'],
-//     notes: ['banana','rasen mähen'],
-//     trashNotesTitles: [],
-//     trashNotes: []
-// }
-
-// function mit for loop und ausgabe von bookTemplate(book) in id="bookFrame"
+// function mit for loop und ausgabe von bookTemplate(book) in id="contentbookFrame"
 function renderBooks() {
     const bookFrame = document.getElementById("bookFrame");
     bookFrame.innerHTML = "";
@@ -55,7 +48,7 @@ function addComment(){
     //     alert("Bitte Name und Kommentar eingeben");
     //     return;
     // }
-    const bookIndex = books[index];
+    const bookIndex = [0];
     books[bookIndex].comments.push({ name: nameInput, comment: commentarInput });
     renderBooks();
     nameInputRef.value = "";
