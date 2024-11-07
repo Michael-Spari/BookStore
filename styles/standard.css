@@ -15,10 +15,27 @@ img{
     width: 200px;
     height: auto;
 }
+p{
+    margin: 0;
+}
 .commentInterface{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
     margin-bottom: 30px;
+}
+.bookPrice{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+.likeBook{
+    font-size: 20px;
+    cursor: pointer;
+}
+.priceLikeFrame{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }

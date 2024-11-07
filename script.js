@@ -14,6 +14,7 @@ function renderBooks() {
 
 function bookTemplate(book, index) {
     let commentsData = '';
+    const heartIcon = book.liked ? '❤️' : '🤍';
     for (let i = 0; i < book.comments.length; i++) {
         const comment = book.comments[i];
         commentsData += `<b>${comment.name}:</b><br>${comment.comment}<br><br>`;
@@ -23,7 +24,10 @@ function bookTemplate(book, index) {
         <hr>
         <img src="${bookImg[0].cover}">
         <hr>
-        <p>${book.price} ${book.liked}</p>
+        <div class="priceLikeFrame">
+        <div class="bookPrice"> ${book.price},- €</div>
+        <div class="likeBook" onclick="likeBook(${index})">${book.likes} Likes ${heartIcon}</div>
+        </div>
         <p><b>Autor: </b>${book.author}</p>
         <p><b>Erscheinungsjahr: </b>${book.publishedYear}</p>
         <p><b>Genre: </b>${book.genre}</p>
@@ -53,3 +57,16 @@ function addComment(bookIndex){
     nameInputRef.value = "";
     commentarInputRef.value = "";
 } 
+
+//function für like button mit counter der likes und farbwechsel
+
+function likeBook(index) {
+    if (books[index].liked) {
+        books[index].likes--;
+    } else {
+        books[index].likes++;
+    }
+    books[index].liked = !books[index].liked;
+    renderBooks();
+    console.log(books[index].likes);
+}
