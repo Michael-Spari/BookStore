@@ -8,11 +8,11 @@ function renderBooks() {
     bookFrame.innerHTML = "";
     for (let index = 0; index < books.length; index++) {
         const book = books[index];
-        bookFrame.innerHTML += bookTemplate(book);
+        bookFrame.innerHTML += bookTemplate(book, index);
     }
 }
 
-function bookTemplate(book) {
+function bookTemplate(book, index) {
     let commentsData = '';
     for (let i = 0; i < book.comments.length; i++) {
         const comment = book.comments[i];
@@ -31,27 +31,25 @@ function bookTemplate(book) {
         <p><b>Kommentare:</b></p><br><div class="commentFrame">${commentsData}</div>
         <hr>
         <div class="commentInterface">
-                <label for="name">Name:</label>
-                <input id="name" type="text" placeholder="Name eingeben...">
-                <label for="comment">Kommentar:</label>
-                <textarea id="comment" type="text" rows="3" placeholder="Kommentar eingeben..."></textarea>
-                <button onclick="addComment()">Kommentar senden</button>
+                <label for="name-${index}">Name:</label>
+                <input id="name-${index}" type="text" placeholder="Name eingeben...">
+                <label for="comment-${index}">Kommentar:</label>
+                <textarea id="comment-${index}" type="text" rows="3" placeholder="Kommentar eingeben..."></textarea>
+                <button onclick="addComment('${index}')">Kommentar senden</button>
                 </div></div>`;
 }
 
-function addComment(){
-    let nameInputRef = document.getElementById('name');
+function addComment(bookIndex){
+    let nameInputRef = document.getElementById(`name-${bookIndex}`);
     let nameInput = nameInputRef.value;
-    let commentarInputRef = document.getElementById('comment');
+    let commentarInputRef = document.getElementById(`comment-${bookIndex}`);
     let commentarInput = commentarInputRef.value;
-    // if (!nameInput || !commentarInput) {
-    //     alert("Bitte Name und Kommentar eingeben");
-    //     return;
-    // }
-    const bookIndex = [0];
+    if (!nameInput || !commentarInput) {
+        alert("Bitte Name und Kommentar eingeben");
+        return;
+    }
     books[bookIndex].comments.push({ name: nameInput, comment: commentarInput });
     renderBooks();
     nameInputRef.value = "";
     commentarInputRef.value = "";
-
-}
+} 
