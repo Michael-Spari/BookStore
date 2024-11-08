@@ -35,7 +35,7 @@ let books = [
       "author": "Maximilian Schwarz",
       "likes": 980,
       "liked": false,
-      "price": 14.50,
+      "price": 14.95,
       "publishedYear": 2021,
       "genre": "Fantasy",
       "comments": []
@@ -105,7 +105,7 @@ let books = [
       "author": "Philipp Silber",
       "likes": 890,
       "liked": false,
-      "price": 12.30,
+      "price": 12.95,
       "publishedYear": 2022,
       "genre": "Science-Fiction",
       "comments": [
@@ -139,7 +139,7 @@ let books = [
       "author": "Elena Gold",
       "likes": 920,
       "liked": false,
-      "price": 17.50,
+      "price": 17.95,
       "publishedYear": 2020,
       "genre": "Fantasy",
       "comments": [
