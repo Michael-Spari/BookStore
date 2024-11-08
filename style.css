@@ -9,8 +9,8 @@ hr {
     border: 0;
     height: 2px;
     width: 100%;
-    background: #333;
-    margin: 20px 0;
+    background: #127799;
+    margin-top: 20px 0;
 }
 header {
     display: flex;
@@ -42,4 +42,13 @@ header {
 .commentFrame {
     height: 120px;
     overflow-y: auto;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #071f27;
+    height: 100px;
+    color: white;
+    padding: 10px;
+    margin-top: 40px;
 }
